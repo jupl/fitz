@@ -1,5 +1,6 @@
-.cache/
-public/
+.cache
+/public
+
 # Edit at https://www.gitignore.io/?templates=node
 
 ### Node ###
