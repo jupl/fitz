@@ -1,0 +1,6 @@
+{
+  "extends": "@jupl/ts",
+  "rules": {
+    "no-void-expression": false
+  }
+}

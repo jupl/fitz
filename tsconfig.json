@@ -1,6 +1,6 @@
 {
-  "extends": "./tsconfig.base.json",
-  "compilerOptions": {
-    "module": "esnext"
-  }
+  "extends": "./node_modules/@jupl/ts/tsconfig.json",
+  "exclude": [
+    "./public"
+  ]
 }

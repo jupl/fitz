@@ -1,6 +1,6 @@
 import React from 'react'
-import {Layout} from '~/components/layout'
-import {SEO} from '~/components/seo'
+import {Layout} from '~/common/components/layout'
+import {SEO} from '~/common/components/seo'
 
 const NotFoundPage = () => (
   <Layout>
@@ -10,4 +10,5 @@ const NotFoundPage = () => (
   </Layout>
 )
 
+// tslint:disable-next-line:no-default-export
 export default NotFoundPage
