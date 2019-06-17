@@ -40,35 +40,35 @@ export const SEO = ({
   const mergedMeta: Meta[] = [
     {
       content: metaDescription,
-      name: `description`,
+      name: 'description',
     },
     {
       content: title,
-      property: `og:title`,
+      property: 'og:title',
     },
     {
       content: metaDescription,
-      property: `og:description`,
+      property: 'og:description',
     },
     {
-      content: `website`,
-      property: `og:type`,
+      content: 'website',
+      property: 'og:type',
     },
     {
-      content: `summary`,
-      name: `twitter:card`,
+      content: 'summary',
+      name: 'twitter:card',
     },
     {
       content: site.siteMetadata.author,
-      name: `twitter:creator`,
+      name: 'twitter:creator',
     },
     {
       content: title,
-      name: `twitter:title`,
+      name: 'twitter:title',
     },
     {
       content: metaDescription,
-      name: `twitter:description`,
+      name: 'twitter:description',
     },
     ...meta,
   ]
