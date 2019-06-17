@@ -1,0 +1,9 @@
+#+HTML: <h1>Fitz <sub><sub><sub>TypeScript + Gatsby Boilerplate</sub></sub></sub></h1>
+
+** Table of Contents
+- [[#about][About]]
+
+** About
+This is a boilerplate project for developing application(s) using [[https://www.typescriptlang.org/][TypeScript]] and [[https://www.gatsbyjs.org/][Gatsby]].
+
+^{[[#fitz-typescript--gatsby-boilerplate][Back to top]]}
