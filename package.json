@@ -9,7 +9,7 @@
     "lint:file": "tslint --project tsconfig.json",
     "server": "npm run server:dev",
     "server:dev": "gatsby develop",
-    "server:prod": "gatsby serve",
+    "server:prod": "gatsby build && gatsby serve",
     "server:story": "cross-env TS_NODE_PROJECT=tsconfig.base.json start-storybook -c storybook -p 3001",
     "start": "npm run lint && npm test && npm run build",
     "test": "jest",
