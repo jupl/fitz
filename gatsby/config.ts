@@ -1,4 +1,5 @@
 import {GatsbyConfig} from 'gatsby'
+import {resolve} from 'path'
 
 /** Gatsby configuration */
 export const config: GatsbyConfig = {
@@ -8,8 +9,14 @@ export const config: GatsbyConfig = {
     'gatsby-plugin-react-helmet',
     {
       options: {
+        path: resolve('src/gatsby/pages'),
+      },
+      resolve: 'gatsby-plugin-page-creator',
+    },
+    {
+      options: {
         name: 'images',
-        path: `${process.cwd()}/src/images`,
+        path: resolve('src/assets/images'),
       },
       resolve: 'gatsby-source-filesystem',
     },

@@ -6,6 +6,20 @@ interface Props {
   siteTitle?: string
 }
 
+/**
+ * Render website header
+ * @return React component
+ */
+export const Header = ({siteTitle = ''}: Props) => (
+  <Background>
+    <Container>
+      <Title>
+        <Link to="/">{siteTitle}</Link>
+      </Title>
+    </Container>
+  </Background>
+)
+
 const Background = styled.div`
   background: rebeccapurple;
   margin-bottom: 1.45rem;
@@ -25,17 +39,3 @@ const Link = styled(GatsbyLink)`
   color: white;
   text-decoration: none;
 `
-
-/**
- * Render website header
- * @return React component
- */
-export const Header = ({siteTitle = ''}: Props) => (
-  <Background>
-    <Container>
-      <Title>
-        <Link to="/">{siteTitle}</Link>
-      </Title>
-    </Container>
-  </Background>
-)

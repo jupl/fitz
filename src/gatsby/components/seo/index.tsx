@@ -11,29 +11,27 @@ interface Props {
   title: string,
 }
 
-const QUERY = graphql`
-  query DefaultSEOQuery {
-    site {
-      siteMetadata {
-        title
-        description
-        author
-      }
-    }
-  }
-`
-
 /**
  * Render SEO-specific metadata
  * @return React component
  */
-export const SEO = ({
+export const GatsbySEO = ({
   description,
   title,
   lang = 'en',
   meta = [],
 }: Props) => {
-  const {site} = useStaticQuery(QUERY)
+  const {site} = useStaticQuery(graphql`
+    query DefaultSEOQuery {
+      site {
+        siteMetadata {
+          title
+          description
+          author
+        }
+      }
+    }
+  `)
   const metaDescription = description !== undefined
     ? description
     : site.siteMetadata.description
