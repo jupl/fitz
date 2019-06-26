@@ -1,5 +1,8 @@
 import {GatsbyConfig} from 'gatsby'
 import {resolve} from 'path'
+import {DEFAULT_LANGUAGE} from '~/common/context'
+
+const PAGES_PATH = resolve('src/gatsby/pages')
 
 /** Gatsby configuration */
 export const config: GatsbyConfig = {
@@ -9,7 +12,14 @@ export const config: GatsbyConfig = {
     'gatsby-plugin-react-helmet',
     {
       options: {
-        path: resolve('src/gatsby/pages'),
+        langKeyDefault: DEFAULT_LANGUAGE,
+        pagesPaths: [PAGES_PATH],
+      },
+      resolve: 'gatsby-plugin-i18n',
+    },
+    {
+      options: {
+        path: PAGES_PATH,
       },
       resolve: 'gatsby-plugin-page-creator',
     },

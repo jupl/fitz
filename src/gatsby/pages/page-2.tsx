@@ -1,6 +1,6 @@
-import {Link} from 'gatsby'
 import React from 'react'
 import {GatsbyLayout} from '../components/layout'
+import {Link} from '../components/link'
 import {GatsbySEO} from '../components/seo'
 
 // tslint:disable-next-line:no-default-export
