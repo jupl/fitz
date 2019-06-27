@@ -12,9 +12,9 @@ Object.assign(process.env, {TS_NODE_PROJECT: ''})
 
 // tslint:disable-next-line:no-default-export
 export default ({config}: Options): Configuration => {
-  const {module, resolve} = config
-  const {rules = []} = module!
-  const {extensions = [], plugins = []} = resolve!
+  const {resolve = {}} = config
+  const rules = config.module ? config.module.rules : []
+  const {extensions = [], plugins = []} = resolve
   return {
     ...config,
     module: {

@@ -1,6 +1,7 @@
 import {graphql, useStaticQuery} from 'gatsby'
-import React from 'react'
+import React, {useContext} from 'react'
 import Helmet from 'react-helmet'
+import * as Common from '~/common/context'
 
 type Meta = JSX.IntrinsicElements['meta']
 
@@ -18,7 +19,6 @@ interface Props {
 export const GatsbySEO = ({
   description,
   title,
-  lang = 'en',
   meta = [],
 }: Props) => {
   const {site} = useStaticQuery(graphql`
@@ -32,6 +32,7 @@ export const GatsbySEO = ({
       }
     }
   `)
+  const {language} = useContext(Common.Context)
   const metaDescription = description !== undefined
     ? description
     : site.siteMetadata.description
@@ -72,7 +73,7 @@ export const GatsbySEO = ({
   ]
   return (
     <Helmet
-      htmlAttributes={{lang}}
+      htmlAttributes={{lang: language}}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={mergedMeta}
