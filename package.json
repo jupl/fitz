@@ -1,15 +1,15 @@
 {
   "private": true,
   "scripts": {
-    "build": "gatsby build",
+    "build": "cross-env TS_NODE_PROJECT=tsconfig.base.json node -r tsconfig-paths/register -r ts-node/register node_modules/.bin/gatsby build",
     "build:story": "cross-env TS_NODE_PROJECT=tsconfig.base.json build-storybook -c storybook -o dist/story",
     "coverage": "npm run test -- --coverage",
     "coverage:watch": "npm run coverage -- --watch",
     "lint": "tsc && npm run lint:file",
     "lint:file": "tslint --project tsconfig.json",
     "server": "npm run server:dev",
-    "server:dev": "gatsby develop",
-    "server:prod": "gatsby build && gatsby serve",
+    "server:dev": "cross-env TS_NODE_PROJECT=tsconfig.base.json node --inspect --no-lazy -r tsconfig-paths/register -r ts-node/register node_modules/.bin/gatsby develop",
+    "server:prod": "npm run build && cross-env TS_NODE_PROJECT=tsconfig.base.json node --inspect --no-lazy -r tsconfig-paths/register -r ts-node/register node_modules/.bin/gatsby serve",
     "server:story": "cross-env TS_NODE_PROJECT=tsconfig.base.json start-storybook -c storybook -p 3001",
     "start": "npm run lint && npm test && npm run build",
     "test": "jest",
@@ -54,6 +54,7 @@
     "jest": "^23.6.0",
     "jest-cli": "^23.6.0",
     "jest-enzyme": "^7.0.2",
+    "tsconfig-paths": "^3.8.0",
     "tslint": "^5.17.0"
   }
 }
