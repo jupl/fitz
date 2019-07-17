@@ -1,8 +1,7 @@
 import {GatsbyConfig} from 'gatsby'
-import {resolve} from 'path'
 import {DEFAULT_LANGUAGE} from '~/common/context'
 
-const PAGES_PATH = resolve('src/gatsby/pages')
+const PAGES_PATH = 'src/gatsby/pages'
 
 /** Gatsby plugins */
 export const plugins: GatsbyConfig['plugins'] = [
@@ -25,7 +24,7 @@ export const plugins: GatsbyConfig['plugins'] = [
   {
     options: {
       name: 'images',
-      path: resolve('src/assets/images'),
+      path: 'src/assets/images',
     },
     resolve: 'gatsby-source-filesystem',
   },
