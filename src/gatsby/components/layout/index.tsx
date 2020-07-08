@@ -1,45 +1,28 @@
-import {graphql, useStaticQuery} from 'gatsby'
 import React, {ReactNode} from 'react'
-import styled from 'styled-components'
 import {Normalize} from 'styled-normalize'
-import {Header} from '~/common/components/header'
+import {Container} from '_/common/components/container'
+import {Header} from '_/common/components/header'
+import {useGatsbyMetadata} from '../../hooks/metadata'
 
 interface Props {
   children: ReactNode
 }
 
 /**
- * Render page payout
+ * Render page payout.
  * @return React component
  */
 export const GatsbyLayout = ({children}: Props) => {
-  const year = new Date().getFullYear()
-  const {site} = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+  const year = new Date(Date.now()).getFullYear()
+  const {title} = useGatsbyMetadata()
   return (
     <>
       <Normalize />
-      <Header siteTitle={site.siteMetadata.title} />
-      <Body>
-        {children}
-        <footer>
-          © {year}, Built with <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </Body>
+      <Header title={title} />
+      <Container>{children}</Container>
+      <Container as="footer">
+        &copy; {year}, Built with <a href="https://www.gatsbyjs.org">Gatsby</a>
+      </Container>
     </>
   )
 }
-
-const Body = styled.div`
-  margin: 0 auto;
-  max-width: 960px;
-  padding: 0 1.0875rem 1.45rem;
-  padding-top: 0;
-`

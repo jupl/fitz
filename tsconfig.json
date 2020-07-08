@@ -1,6 +1,10 @@
 {
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "_/*": ["*"]
+    }
+  },
   "extends": "./node_modules/@jupl/ts/tsconfig.json",
-  "exclude": [
-    "./public"
-  ]
+  "exclude": ["./coverage", "./dist", "./public"]
 }

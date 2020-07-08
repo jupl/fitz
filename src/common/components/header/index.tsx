@@ -1,41 +1,35 @@
 import React from 'react'
 import styled from 'styled-components'
-import {Link as GatsbyLink} from '~/gatsby/components/link'
+import {Link as GatsbyLink} from 'gatsby'
+import {Container} from '../container'
 
 interface Props {
-  siteTitle?: string
+  title: string
 }
 
-/**
- * Render website header
- * @return React component
- */
-export const Header = ({siteTitle = ''}: Props) => (
-  <Background>
-    <Container>
-      <Title>
-        <Link to="/">{siteTitle}</Link>
-      </Title>
-    </Container>
-  </Background>
-)
-
-const Background = styled.div`
+const Background = styled.header`
   background: rebeccapurple;
-  margin-bottom: 1.45rem;
-`
-
-const Container = styled.div`
-  margin: 0 auto;
-  max-width: 960px;
-  padding: 1.45rem 1.0875rem;
-`
-
-const Title = styled.h1`
-  margin: 0;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 `
 
 const Link = styled(GatsbyLink)`
-  color: white;
+  color: inherit;
   text-decoration: none;
 `
+
+/**
+ * Render website header.
+ * @return React component
+ */
+export const Header = ({title}: Props) => (
+  <Background>
+    <Container>
+      <h1>
+        <Link to="/">{title}</Link>
+      </h1>
+    </Container>
+  </Background>
+)

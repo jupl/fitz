@@ -1,7 +1,0 @@
-{
-  "extends": "@jupl/ts",
-  "rules": {
-    "no-implicit-dependencies": [true, "dev", ["~", "@reach/router"]],
-    "no-void-expression": false
-  }
-}

@@ -1,82 +1,73 @@
-import {graphql, useStaticQuery} from 'gatsby'
-import React, {useContext} from 'react'
-import Helmet from 'react-helmet'
-import * as Common from '~/common/context'
+import React, {HTMLAttributes, useMemo} from 'react'
+import {Helmet} from 'react-helmet'
+import {useGatsbyMetadata} from '../../hooks/metadata'
 
-type Meta = JSX.IntrinsicElements['meta']
+type Meta = HTMLAttributes<HTMLMetaElement>
 
 interface Props {
   description?: string
-  lang?: string,
   meta?: Meta[]
-  title: string,
+  title?: string
 }
 
+const DEFAULT_META: Meta[] = []
+
 /**
- * Render SEO-specific metadata
+ * Render SEO-specific metadata.
  * @return React component
  */
 export const GatsbySEO = ({
-  description,
-  title,
-  meta = [],
+  description: pageDescription,
+  title: pageTitle,
+  meta: pageMeta = DEFAULT_META,
 }: Props) => {
-  const {site} = useStaticQuery(graphql`
-    query DefaultSEOQuery {
-      site {
-        siteMetadata {
-          title
-          description
-          author
-        }
-      }
-    }
-  `)
-  const {language} = useContext(Common.Context)
-  const metaDescription = description !== undefined
-    ? description
-    : site.siteMetadata.description
-  const mergedMeta: Meta[] = [
-    {
-      content: metaDescription,
-      name: 'description',
-    },
-    {
-      content: title,
-      property: 'og:title',
-    },
-    {
-      content: metaDescription,
-      property: 'og:description',
-    },
-    {
-      content: 'website',
-      property: 'og:type',
-    },
-    {
-      content: 'summary',
-      name: 'twitter:card',
-    },
-    {
-      content: site.siteMetadata.author,
-      name: 'twitter:creator',
-    },
-    {
-      content: title,
-      name: 'twitter:title',
-    },
-    {
-      content: metaDescription,
-      name: 'twitter:description',
-    },
-    ...meta,
-  ]
+  const {author, ...metadata} = useGatsbyMetadata()
+  const description = pageDescription ?? metadata.description
+  const title = pageTitle ?? metadata.title
+  const meta = useMemo<Meta[]>(
+    () => [
+      {
+        content: description,
+        name: 'description',
+      },
+      {
+        content: title,
+        property: 'og:title',
+      },
+      {
+        content: description,
+        property: 'og:description',
+      },
+      {
+        content: 'website',
+        property: 'og:type',
+      },
+      {
+        content: 'summary',
+        name: 'twitter:card',
+      },
+      {
+        content: author,
+        name: 'twitter:creator',
+      },
+      {
+        content: title,
+        name: 'twitter:title',
+      },
+      {
+        content: description,
+        name: 'twitter:description',
+      },
+      ...pageMeta,
+    ],
+    [author, description, pageMeta, title],
+  )
   return (
     <Helmet
-      htmlAttributes={{lang: language}}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
-      meta={mergedMeta}
+      defaultTitle={metadata.title}
+      meta={meta}
+      title={pageTitle}
+      titleTemplate={`%s | ${metadata.title}`}
     />
   )
 }
