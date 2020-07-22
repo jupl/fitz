@@ -14,6 +14,10 @@ const DEFAULT_META: Meta[] = []
 
 /**
  * Render SEO-specific metadata.
+ * @param props Component properties
+ * @param props.description Optional page description
+ * @param props.title Optional page title
+ * @param props.meta Optional page metadata
  * @return React component
  */
 export const GatsbySEO = ({

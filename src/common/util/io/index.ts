@@ -1,4 +1,4 @@
-import {isRight} from 'fp-ts/es6/Either'
+import {isRight} from 'fp-ts/lib/Either'
 import * as IO from 'io-ts'
 import {reporter} from 'io-ts-reporters'
 

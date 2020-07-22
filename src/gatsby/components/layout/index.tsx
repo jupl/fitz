@@ -1,7 +1,7 @@
 import React, {ReactNode} from 'react'
 import {Normalize} from 'styled-normalize'
-import {Container} from '_/common/components/container'
-import {Header} from '_/common/components/header'
+import {Container} from '~/common/components/container'
+import {Header} from '~/common/components/header'
 import {useGatsbyMetadata} from '../../hooks/metadata'
 
 interface Props {
@@ -10,6 +10,8 @@ interface Props {
 
 /**
  * Render page payout.
+ * @param props Component properties
+ * @param props.children Children components
  * @return React component
  */
 export const GatsbyLayout = ({children}: Props) => {

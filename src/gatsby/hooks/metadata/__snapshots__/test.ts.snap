@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`hook 1`] = `
+Object {
+  "author": "Author",
+  "description": "Description",
+  "title": "Title",
+}
+`;

@@ -12,6 +12,7 @@ interface Props {
 /**
  * Render image from Gatsby data.
  * @param props Component properties
+ * @param props.data Gatsby image data
  * @return React component
  */
 export const GatsbyImage = ({data, ...props}: Props) => {

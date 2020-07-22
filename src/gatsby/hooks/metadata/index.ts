@@ -1,6 +1,6 @@
 import {graphql, useStaticQuery} from 'gatsby'
 import * as IO from 'io-ts'
-import {useDecode} from '_/common/hooks/io'
+import {useDecode} from '~/common/hooks/io'
 import {GatsbyMetadata} from '../../types/metadata'
 
 const Query = IO.type({

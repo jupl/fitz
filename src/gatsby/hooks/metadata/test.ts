@@ -1,12 +1,8 @@
-import test from 'ava'
-import {when} from 'testdouble'
 import {renderHook} from '@testing-library/react-hooks'
 
-test.before(async () => {
-  const {useStaticQuery} = await import('gatsby')
-  const {query} = await import('.')
-  // @ts-ignore
-  when(useStaticQuery(query)).thenReturn({
+beforeAll(async () => {
+  const gatsby = await import('gatsby')
+  jest.spyOn(gatsby, 'useStaticQuery').mockReturnValue({
     site: {
       metadata: {
         author: 'Author',
@@ -17,8 +13,13 @@ test.before(async () => {
   })
 })
 
-test('hook', async t => {
+afterAll(async () => {
+  const gatsby = await import('gatsby')
+  jest.spyOn(gatsby, 'useStaticQuery').mockRestore()
+})
+
+test('hook', async () => {
   const {useGatsbyMetadata} = await import('.')
   const {result} = renderHook(() => useGatsbyMetadata())
-  t.snapshot(result.current)
+  expect(result.current).toMatchSnapshot()
 })

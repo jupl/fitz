@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render 1`] = `
+Object {
+  "base": Object {
+    "toComponent": [Function],
+    "toString": [Function],
+  },
+  "bodyAttributes": Object {
+    "toComponent": [Function],
+    "toString": [Function],
+  },
+  "htmlAttributes": Object {
+    "toComponent": [Function],
+    "toString": [Function],
+  },
+  "link": Object {
+    "toComponent": [Function],
+    "toString": [Function],
+  },
+  "meta": Object {
+    "toComponent": [Function],
+    "toString": [Function],
+  },
+  "noscript": Object {
+    "toComponent": [Function],
+    "toString": [Function],
+  },
+  "script": Object {
+    "toComponent": [Function],
+    "toString": [Function],
+  },
+  "style": Object {
+    "toComponent": [Function],
+    "toString": [Function],
+  },
+  "title": Object {
+    "toComponent": [Function],
+    "toString": [Function],
+  },
+}
+`;

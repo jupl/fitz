@@ -1,8 +1,7 @@
-import test from 'ava'
-import React from 'react'
 import {create} from 'react-test-renderer'
 
-test('render with fixed Sharp image', async t => {
+test('render with fixed Sharp image', async () => {
+  const React = await import('react')
   const {GatsbyImage} = await import('.')
   const data = {
     childImageSharp: {
@@ -16,10 +15,11 @@ test('render with fixed Sharp image', async t => {
     url: '/some/url',
   }
   const component = create(<GatsbyImage data={data} />)
-  t.snapshot(component.toJSON())
+  expect(component.toJSON()).toMatchSnapshot()
 })
 
-test('render with fluid Sharp image', async t => {
+test('render with fluid Sharp image', async () => {
+  const React = await import('react')
   const {GatsbyImage} = await import('.')
   const data = {
     childImageSharp: {
@@ -34,14 +34,15 @@ test('render with fluid Sharp image', async t => {
     url: '/some/url',
   }
   const component = create(<GatsbyImage data={data} />)
-  t.snapshot(component.toJSON())
+  expect(component.toJSON()).toMatchSnapshot()
 })
 
-test('render with no Sharp image', async t => {
+test('render with no Sharp image', async () => {
+  const React = await import('react')
   const {GatsbyImage} = await import('.')
   const data = {
     url: '/some/url',
   }
   const component = create(<GatsbyImage data={data} />)
-  t.snapshot(component.toJSON())
+  expect(component.toJSON()).toMatchSnapshot()
 })

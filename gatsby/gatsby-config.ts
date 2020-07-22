@@ -1,5 +1,5 @@
 import {GatsbyConfig} from 'gatsby'
-import {GatsbyMetadata} from '_/gatsby/types/metadata'
+import {GatsbyMetadata} from '~/gatsby/types/metadata'
 
 const COLOR = '#663399'
 

@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`useDecode hook 1`] = `1`;
+
+exports[`useEncode hook 1`] = `1`;

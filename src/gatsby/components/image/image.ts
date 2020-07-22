@@ -2,17 +2,18 @@ import Image from 'gatsby-image'
 import styled from 'styled-components'
 
 interface Props {
-  $maxWidth?: number
+  $maxWidth: number
 }
 
 /**
  * Render fluid sharp image.
+ * @param props Component properties
+ * @param props.$maxWidth Max width of image
  * @return React component
  */
 export const SharpFluidImage = styled(Image)`
   margin: 0 auto;
-  ${({$maxWidth = NaN}: Props) =>
-    Number.isNaN($maxWidth) ? '' : `max-width: ${$maxWidth}px`};
+  max-width: ${({$maxWidth}: Props) => $maxWidth}px;
 `
 
 /**

@@ -1,18 +1,19 @@
-import * as IO from 'io-ts'
-import test from 'ava'
-
-test('decode', async t => {
+test('decode', async () => {
+  const IO = await import('io-ts')
   const {decode} = await import('.')
-  t.is(decode(IO.number, 1), 1)
+  expect(decode(IO.number, 1)).toBe(1)
 })
 
-test('decode with fallback', async t => {
+test('decode with fallback', async () => {
+  const IO = await import('io-ts')
   const {decode} = await import('.')
-  t.is(decode(IO.number, 'a', 1), 1)
+  expect(decode(IO.number, 'a', 1)).toBe(1)
 })
 
-test('decode with error', async t => {
+test('decode with error', async () => {
+  const IO = await import('io-ts')
   const {decode} = await import('.')
-  const e = t.throws(() => decode(IO.number, 'a'))
-  t.is(e.message, 'Expecting number but instead got: "a"')
+  expect(() => decode(IO.number, 'a')).toThrow(
+    'Expecting number but instead got: "a"',
+  )
 })

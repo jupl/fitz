@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render 1`] = `
+Array [
+  <header
+    className=""
+  >
+    <div
+      className=""
+    >
+      <h1>
+        <a
+          className=""
+          href="/"
+        >
+          Title
+        </a>
+      </h1>
+    </div>
+  </header>,
+  <div
+    className=""
+  >
+    Hello
+  </div>,
+  <footer
+    className=""
+  >
+    © 
+    2020
+    , Built with 
+    <a
+      href="https://www.gatsbyjs.org"
+    >
+      Gatsby
+    </a>
+  </footer>,
+]
+`;

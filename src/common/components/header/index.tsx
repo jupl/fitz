@@ -1,6 +1,6 @@
+import {Link as GatsbyLink} from 'gatsby'
 import React from 'react'
 import styled from 'styled-components'
-import {Link as GatsbyLink} from 'gatsby'
 import {Container} from '../container'
 
 interface Props {
@@ -22,6 +22,8 @@ const Link = styled(GatsbyLink)`
 
 /**
  * Render website header.
+ * @param props Component properties
+ * @param props.title Website title
  * @return React component
  */
 export const Header = ({title}: Props) => (

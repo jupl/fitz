@@ -1,10 +1,10 @@
 import {Link} from 'gatsby'
 import React from 'react'
 import styled from 'styled-components'
-import {GatsbyImage} from '_/gatsby/components/image'
-import {GatsbyLayout} from '_/gatsby/components/layout'
-import {GatsbySEO} from '_/gatsby/components/seo'
-import {useGatsbyAstronaut} from '_/gatsby/hooks/astronaut'
+import {GatsbyImage} from '~/gatsby/components/image'
+import {GatsbyLayout} from '~/gatsby/components/layout'
+import {GatsbySEO} from '~/gatsby/components/seo'
+import {useGatsbyAstronaut} from '~/gatsby/hooks/astronaut'
 
 const Image = styled(GatsbyImage)`
   margin-block-end: 1rem;

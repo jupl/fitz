@@ -1,6 +1,6 @@
 import React from 'react'
-import {GatsbyLayout} from '_/gatsby/components/layout'
-import {GatsbySEO} from '_/gatsby/components/seo'
+import {GatsbyLayout} from '~/gatsby/components/layout'
+import {GatsbySEO} from '~/gatsby/components/seo'
 
 const HTTP404Page = () => (
   <GatsbyLayout>
