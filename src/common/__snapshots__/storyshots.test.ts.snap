@@ -83,6 +83,7 @@ exports[`Storyshots Gatsby|Image fluid 1`] = `
 
 exports[`Storyshots Gatsby|Image plain 1`] = `
 <img
+  alt=""
   className=""
   src="src/assets/images/gatsby-astronaut.png"
 />
