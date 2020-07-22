@@ -12,7 +12,7 @@
     "server": "yarn run server:dev",
     "server:dev": "gatsby develop",
     "server:prod": "yarn run build && gatsby serve",
-    "server:story": "start-storybook -c story",
+    "server:story": "start-storybook -c story -p 9001",
     "start": "yarn run lint && yarn test && yarn run build",
     "test": "jest",
     "test:update": "yarn run test --update-snapshot",
@@ -46,6 +46,7 @@
     "typescript": "^3.5.3"
   },
   "devDependencies": {
+    "@storybook/addon-knobs": "^5.3.19",
     "@storybook/react": "^5.3.19",
     "@testing-library/react-hooks": "^3.3.0",
     "@types/jest": "^26.0.5",
@@ -57,6 +58,7 @@
     "@types/webpack": "^4.4.35",
     "@typescript-eslint/eslint-plugin": "^3.7.0",
     "babel-jest": "^26.1.0",
+    "babel-loader": "^8.1.0",
     "babel-preset-react-app": "^9.1.2",
     "eslint": "^7.5.0",
     "jest": "^26.1.0",
