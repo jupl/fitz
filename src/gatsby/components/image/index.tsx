@@ -17,7 +17,7 @@ interface Props {
  */
 export const GatsbyImage = ({data, ...props}: Props) => {
   if (!data.childImageSharp) {
-    return <NonSharpImage {...props} src={encodeURI(data.url)} />
+    return <NonSharpImage alt="" {...props} src={encodeURI(data.url)} />
   }
   if ('fluid' in data.childImageSharp) {
     return (

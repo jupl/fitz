@@ -4,7 +4,11 @@ const TSConfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 
 type Configuration = import('webpack').Configuration
 
-exports.addons = ['@storybook/addon-knobs/register']
+exports.addons = [
+  '@storybook/addon-a11y/register',
+  '@storybook/addon-knobs/register',
+  '@storybook/addon-viewport/register',
+]
 
 exports.stories = [
   '../src/**/story.tsx',

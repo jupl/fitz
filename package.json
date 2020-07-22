@@ -13,7 +13,7 @@
     "server": "yarn run server:dev",
     "server:dev": "gatsby develop",
     "server:prod": "yarn run build && gatsby serve",
-    "server:story": "start-storybook -c story -p 9001",
+    "server:story": "start-storybook --ci -c story -p 9001",
     "start": "yarn run lint && yarn test && yarn run build",
     "test": "jest",
     "test:update": "yarn run test --update-snapshot",
@@ -46,8 +46,10 @@
     "typescript": "^3.5.3"
   },
   "devDependencies": {
+    "@storybook/addon-a11y": "^5.3.19",
     "@storybook/addon-knobs": "^5.3.19",
     "@storybook/addon-storyshots": "^5.3.19",
+    "@storybook/addon-viewport": "^5.3.19",
     "@storybook/react": "^5.3.19",
     "@testing-library/react-hooks": "^3.3.0",
     "@types/jest": "^26.0.5",
