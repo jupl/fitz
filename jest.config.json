@@ -1,9 +1,0 @@
-{
-  "moduleNameMapper": {
-    "^~/(.*)": "<rootDir>/src/$1"
-  },
-  "preset": "@jupl/ts",
-  "setupFiles": ["dotenv/config"],
-  "setupFilesAfterEnv": ["<rootDir>/test/setup.ts"],
-  "testPathIgnorePatterns": ["/node_modules/", "/\\.cache/"]
-}
