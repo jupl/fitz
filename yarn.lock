@@ -1887,7 +1887,7 @@
     core-js "^3.4.1"
     regenerator-runtime "^0.13.3"
 
-"@jupl/ts@^0.8.0":
+"@jupl/eslint-config-ts@npm:@jupl/ts", "@jupl/ts@^0.8.0":
   version "0.8.3"
   resolved "https://registry.yarnpkg.com/@jupl/ts/-/ts-0.8.3.tgz#8a21c26fe0fa87fdf55fc2452cc0a7e567c4158d"
   integrity sha512-zFjvi0gA3w6os6+E/lhMxGbeks09+O5tl2G2otyi9iVUUmTFhedIT4LlKhRptYcGqNXpmLZdMXDN6C3XqEq05Q==

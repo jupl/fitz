@@ -48,6 +48,7 @@
   "devDependencies": {
     "@babel/core": "^7.10.5",
     "@jest/globals": "^26.1.0",
+    "@jupl/eslint-config-ts": "npm:@jupl/ts",
     "@storybook/addon-a11y": "^6.0.0-rc.13",
     "@storybook/addon-actions": "^6.0.0-rc.13",
     "@storybook/addon-knobs": "^6.0.0-rc.13",

@@ -1,0 +1,4 @@
+{
+  "extends": "@jupl/ts",
+  "ignorePatterns": ["coverage/", "dist/", "public/"]
+}
