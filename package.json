@@ -14,7 +14,7 @@
     "server:dev": "gatsby develop",
     "server:prod": "yarn run build && gatsby serve",
     "server:story": "start-storybook --ci -c story -p 9001",
-    "start": "yarn run lint && yarn test && yarn run build",
+    "start": "yarn run lint && yarn run test && yarn run build",
     "test": "jest",
     "test:update": "yarn run test --update-snapshot",
     "test:watch": "yarn run test --watch"
