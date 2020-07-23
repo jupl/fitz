@@ -5,9 +5,10 @@ const TSConfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 type Configuration = import('webpack').Configuration
 
 exports.addons = [
-  '@storybook/addon-a11y/register',
-  '@storybook/addon-knobs/register',
-  '@storybook/addon-viewport/register',
+  '@storybook/addon-a11y',
+  '@storybook/addon-actions',
+  '@storybook/addon-knobs',
+  '@storybook/addon-viewport',
 ]
 
 exports.stories = [
@@ -44,12 +45,8 @@ exports.webpackFinal = ({
               options: {
                 ...firstUse.options,
                 plugins: [
-                  require.resolve('@babel/plugin-proposal-class-properties'),
+                  ...firstUse.options.plugins,
                   require.resolve('babel-plugin-remove-graphql-queries'),
-                ],
-                presets: [
-                  require.resolve('@babel/preset-react'),
-                  require.resolve('@babel/preset-env'),
                 ],
               },
             },
@@ -57,22 +54,10 @@ exports.webpackFinal = ({
           ],
         },
         ...rules,
-        {
-          loader: require.resolve('babel-loader'),
-          options: {
-            plugins: [
-              require.resolve('@babel/plugin-proposal-class-properties'),
-              require.resolve('babel-plugin-remove-graphql-queries'),
-            ],
-            presets: [['react-app', {flow: false, typescript: true}]],
-          },
-          test: /\.tsx?$/,
-        },
       ],
     },
     resolve: {
       ...config.resolve,
-      extensions: [...(config.resolve?.extensions ?? []), '.ts', '.tsx'],
       mainFields: ['browser', 'module', 'main'],
       plugins: [...(config.resolve?.plugins ?? []), new TSConfigPathsPlugin()],
     },

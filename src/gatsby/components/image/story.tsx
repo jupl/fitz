@@ -4,7 +4,8 @@ import React from 'react'
 import url from '~/assets/images/gatsby-astronaut.png'
 import {GatsbyImage} from '.'
 
-storiesOf('Gatsby|Image', module)
+storiesOf('Gatsby/Image', module)
+  .addParameters({component: GatsbyImage})
   .add('plain', () => {
     const data = {url}
     return <GatsbyImage data={data} />

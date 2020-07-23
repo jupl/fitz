@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Common/Header default 1`] = `
+<header
+  className="sc-AxirZ gELXlJ"
+>
+  <div
+    className="sc-AxjAm lkPSa-D"
+  >
+    <h1>
+      <a
+        className="sc-AxiKw iaIeKE"
+        href="/"
+      >
+        Title
+      </a>
+    </h1>
+  </div>
+</header>
+`;

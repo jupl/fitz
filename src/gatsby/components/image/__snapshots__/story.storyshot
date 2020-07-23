@@ -1,33 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Common|Container default 1`] = `
-<div
-  className=""
->
-  Content
-</div>
-`;
-
-exports[`Storyshots Common|Header default 1`] = `
-<header
-  className=""
->
-  <div
-    className=""
-  >
-    <h1>
-      <a
-        className=""
-        href="/"
-      >
-        Title
-      </a>
-    </h1>
-  </div>
-</header>
-`;
-
-exports[`Storyshots Gatsby|Image fixed 1`] = `
+exports[`Storyshots Gatsby/Image fixed 1`] = `
 <span
   className=" gatsby-image-wrapper"
   style={
@@ -50,9 +23,9 @@ exports[`Storyshots Gatsby|Image fixed 1`] = `
 </span>
 `;
 
-exports[`Storyshots Gatsby|Image fluid 1`] = `
+exports[`Storyshots Gatsby/Image fluid 1`] = `
 <div
-  className="gatsby-image-wrapper"
+  className="sc-AxhCb cWzgSd gatsby-image-wrapper"
   style={
     Object {
       "maxHeight": null,
@@ -81,10 +54,10 @@ exports[`Storyshots Gatsby|Image fluid 1`] = `
 </div>
 `;
 
-exports[`Storyshots Gatsby|Image plain 1`] = `
+exports[`Storyshots Gatsby/Image plain 1`] = `
 <img
   alt=""
-  className=""
+  className="sc-AxhUy dWeUmw"
   src="src/assets/images/gatsby-astronaut.png"
 />
 `;
