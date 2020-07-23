@@ -1,6 +1,7 @@
+import {afterAll, beforeAll, expect, jest, test} from '@jest/globals'
 import {renderHook} from '@testing-library/react-hooks'
 
-beforeAll(async () => {
+void beforeAll(async () => {
   const gatsby = await import('gatsby')
   jest.spyOn(gatsby, 'useStaticQuery').mockReturnValue({
     site: {
@@ -13,7 +14,7 @@ beforeAll(async () => {
   })
 })
 
-afterAll(async () => {
+void afterAll(async () => {
   const gatsby = await import('gatsby')
   jest.spyOn(gatsby, 'useStaticQuery').mockRestore()
 })

@@ -1,3 +1,5 @@
+import {expect, test} from '@jest/globals'
+
 test('decode', async () => {
   const IO = await import('io-ts')
   const {decode} = await import('.')

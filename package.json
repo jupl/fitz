@@ -46,6 +46,8 @@
     "typescript": "^3.5.3"
   },
   "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "@jest/globals": "^26.1.0",
     "@storybook/addon-a11y": "^6.0.0-rc.13",
     "@storybook/addon-actions": "^6.0.0-rc.13",
     "@storybook/addon-knobs": "^6.0.0-rc.13",
@@ -61,7 +63,6 @@
     "@types/styled-components": "^5.1.0",
     "@types/webpack": "^4.4.35",
     "@typescript-eslint/eslint-plugin": "^3.7.0",
-    "babel-jest": "^26.1.0",
     "babel-preset-react-app": "^9.1.2",
     "eslint": "^7.5.0",
     "jest": "^26.1.0",

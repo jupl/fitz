@@ -1,10 +1,11 @@
+import {jest} from '@jest/globals'
 import React from 'react'
 
 // https://www.gatsbyjs.org/docs/unit-testing/
 
 type LinkProps<T> = import('gatsby').GatsbyLinkProps<T>
 
-const gatsby: typeof import('gatsby') = jest.requireActual('gatsby')
+const gatsby = jest.requireActual('gatsby') as typeof import('gatsby')
 
 const Link = <T extends Record<string, unknown>>({
   activeClassName: _activeClassName,

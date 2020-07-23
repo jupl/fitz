@@ -1,6 +1,7 @@
+import {afterAll, beforeAll, expect, jest, test} from '@jest/globals'
 import {create} from 'react-test-renderer'
 
-beforeAll(async () => {
+void beforeAll(async () => {
   const hooks = await import('../../hooks/metadata')
   jest.spyOn(hooks, 'useGatsbyMetadata').mockReturnValue({
     author: 'Author',
@@ -10,7 +11,7 @@ beforeAll(async () => {
   jest.spyOn(Date, 'now').mockReturnValue(1594385918516)
 })
 
-afterAll(async () => {
+void afterAll(async () => {
   const hooks = await import('../../hooks/metadata')
   jest.spyOn(hooks, 'useGatsbyMetadata').mockRestore()
   jest.spyOn(Date, 'now').mockRestore()
