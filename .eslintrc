@@ -1,4 +1,4 @@
 {
   "extends": "./node_modules/@jupl/ts/lint",
-  "ignorePatterns": ["coverage/", "dist/", "public/"]
+  "ignorePatterns": [".yarn/", "coverage/", "dist/", "public/"]
 }
